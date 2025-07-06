@@ -162,7 +162,7 @@ def generate_download_filename(uasg, numero_pregao):
         return f"U_{uasg}_N_{numero_clean}_E.pdf"
     return None
 
-EXCEL_PATH = r"C:\\Users\\pietr\\Meu Drive\\Arte Comercial\\EDITAIS\\EDITAL_PC.xlsx"
+EXCEL_PATH = r"C:\Users\pietr\Meu Drive\Arte Comercial\EDITAIS\EDITAL_PC.xlsx"
 
 def register_in_spreadsheet(card_data, item_number):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")

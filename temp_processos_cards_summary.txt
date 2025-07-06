@@ -1,0 +1,28 @@
+Resumo dos cards na lista "Processos":
+
+1. Facilities
+2. Pregão Eletrônico N° 90010/2024 (SRP) (Lei 14.133/2021) - UASG 160498 - 2 BATALHAO DE INFANTARIA LEVE
+3. Preparando
+4. COMANDO DA MARINHA - BATALHAO NAVAL - Uasg: 731050 - Dispensa Eletrônica 90046/2025
+5. ESP-UNESP-FACUL.DE ENGENHARIA-C.ILHA SOLTEIRA - Uasg: 102318 - Pregão Eletrônico 90035/2025
+6. BANCO CENTRAL DO BRASIL - SÃO PAULO - Uasg: 925138 - Dispensa Eletrônica 90003/2025
+7. MINISTÉRIO PÚBLICO DO ESTADO DO MATO GROSSO - Uasg: 926625 - Dispensa Eletrônica 90041/2025
+8. MARANHÃO 15 MILHÃO
+9. COLEGIO PEDRO II
+10. ESP-GABINETE DO SECRETARIO E ASSES.SEC.AD.PEN - Uasg: 380101 - Pregão Eletrônico 90033/2025
+11. ESP-ESCOLA DE ARTES CIÊNCIAS E HUMAN- USP - Uasg: 102168 - Dispensa Eletrônica 90068/2025
+12. PROMPT PREPARANDO
+13. PROMPT QWEN
+14. PROMPTS DEEPSEEK
+15. Agente Orçamentario 2.0 (Manus)
+16. Prompt Agente Estratégico (GPT)
+17. Pipeline
+18. Automações
+19. Power Bi
+20. Locais de Venda
+
+Cada card contém anexos, links para portais de compras, planilhas, PDFs e descrições detalhadas.
+
+Posso ajudar a criar um plano para automatizar o fluxo de trabalho baseado nesses cards e os scripts já existentes.
+
+Por favor, confirme se deseja que eu prossiga com a criação do plano detalhado para o build.
