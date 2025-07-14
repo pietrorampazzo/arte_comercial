@@ -11,7 +11,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 # === CONFIGURAÇÕES ===
 DOWNLOAD_TEMP_PATH = os.path.join(os.getcwd(), "downloads_temp")
-EDITAL_DESTINO = r"C:\Users\pietr\Meu Drive\Arte Comercial\EDITAIS\Junho"
+EDITAL_DESTINO = r"C:\Users\pietr\Meu Drive\Arte Comercial\EDITAIS\EDITAIS_PC.xlsx"
 URL_EDITAL = "https://cnetmobile.estaleiro.serpro.gov.br/comprasnet-web/public/compras/acompanhamento-compra?compra=16024905910272025"
 
 # Múltiplas opções de localização do botão

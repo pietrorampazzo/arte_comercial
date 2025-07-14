@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-"""
-Script Final: Trello + Google Sheets
-===================================
-
-Script integrado para monitorar cards do Trello e atualizar planilha do Google Sheets
-"""
 import openpyxl
 import requests
 import re
@@ -17,7 +10,6 @@ TOKEN = 'ATTA89e63b1ce30ca079cef748f3a99cda25de9a37f3ba98c35680870835d6f2cae034C
 
 # IDs das listas PREPARANDO encontradas
 LISTAS_PREPARANDO = [
-   '68621887b903a403541f2503',
     '6650f3369bb9bacb525d1dc8',  # Board: Novo Pietro
 ]
 
@@ -162,7 +154,7 @@ def generate_download_filename(uasg, numero_pregao):
         return f"U_{uasg}_N_{numero_clean}_E.pdf"
     return None
 
-EXCEL_PATH = r"C:\Users\pietr\Meu Drive\Arte Comercial\EDITAIS\EDITAL_PC.xlsx"
+EXCEL_PATH = r"C:\Users\pietr\Meu Drive\Arte Comercial\EDITAIS\EDITAIS_PC.xlsx"
 
 def register_in_spreadsheet(card_data, item_number):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -172,7 +164,7 @@ def register_in_spreadsheet(card_data, item_number):
         card_data.get('dia_pregao', ''),
         card_data.get('uasg', ''),
         card_data.get('numero_pregao', ''),
-        card_data.get('link_compras_gov', ''),
+        card_data.get('link_compras_gov', ''),  # Coluna F (índice 5)
         card_data.get('downloads_pregao', ''),
         ''
     ]
@@ -185,6 +177,7 @@ def register_in_spreadsheet(card_data, item_number):
     except Exception as e:
         print(f"\n❌ Erro ao registrar na planilha: {e}")
         return False
+
 def process_all_cards():
     print("🚀 Iniciando processamento de cards...")
     try:
@@ -196,13 +189,14 @@ def process_all_cards():
             if txt_attachment:
                 card_data = extract_data_from_txt(txt_attachment['id'], card['id'])
                 if card_data and card_data['new_card_name']:
-                    # Atualiza o campo link_compras_gov com attachments[1]['url'] se existir
-                    if len(attachments) > 1 and attachments[1].get('url'):
-                        card_data['link_compras_gov'] = attachments[1]['url']
-                    else:
-                        compras_links = get_compras_gov_links(card['id'])
-                        if compras_links:
-                            card_data['link_compras_gov'] = compras_links[0]
+                    # ============== ATUALIZAÇÃO PRINCIPAL ==============
+                    # Busca links do compras.gov.br nos anexos
+                    compras_links = get_compras_gov_links(card['id'])
+                    if compras_links:
+                        # Usa o PRIMEIRO link encontrado (pode ser ajustado conforme necessidade)
+                        card_data['link_compras_gov'] = compras_links[0]
+                    # ===================================================
+                    
                     download_filename = generate_download_filename(
                         card_data['uasg'],
                         card_data['numero_pregao']
